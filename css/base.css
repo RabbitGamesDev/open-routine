@@ -1,0 +1,35 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--text);font-family:var(--font);min-height:100vh;
+  background-image:radial-gradient(900px 500px at 90% -10%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 60%)}
+::selection{background:var(--accent);color:#fff}
+::-webkit-scrollbar{width:8px;height:8px}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:99px}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+input,select,textarea{font-family:inherit;font-size:1rem;color:var(--text)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+code{font-family:ui-monospace,monospace;font-size:.85em;color:var(--accent-2)}
+.safe-b{padding-bottom:calc(env(safe-area-inset-bottom) + .5rem)}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Layout */
+#sidebar{position:fixed;inset:0 auto 0 0;width:var(--sidebar-w);background:var(--surface);
+  border-right:1px solid var(--border);display:flex;flex-direction:column;z-index:40;transition:transform var(--speed)}
+#sidebar.hidden{transform:translateX(-100%)}
+#main{margin-left:var(--sidebar-w);min-height:100vh;display:flex;flex-direction:column}
+#topbar{position:sticky;top:0;z-index:30;height:60px;display:flex;align-items:center;gap:.75rem;
+  padding:0 1.25rem;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+#view{flex:1;padding:1.5rem;max-width:1100px;width:100%;margin:0 auto}
+#bottomnav{position:fixed;bottom:0;inset-inline:0;z-index:40;display:none;background:color-mix(in srgb,var(--bg) 88%,transparent);
+  backdrop-filter:blur(14px);border-top:1px solid var(--border)}
+@media (max-width:860px){
+  #sidebar{transform:translateX(-100%)}
+  #sidebar.open{transform:translateX(0)}
+  #main{margin-left:0}
+  #bottomnav{display:flex}
+  #view{padding:1rem 1rem calc(var(--nav-h) + 2rem)}
+  .only-desktop{display:none!important}
+}
+@media (min-width:861px){.only-mobile{display:none!important}}
+#scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:35;opacity:0;pointer-events:none;transition:opacity var(--speed)}
+#scrim.on{opacity:1;pointer-events:auto}

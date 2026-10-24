@@ -1,0 +1,23 @@
+/* ===== OpenRutine — Tokens de diseño ===== */
+:root{
+  --bg:#09090B; --surface:#121216; --surface-2:#1B1B23; --border:#2A2A35;
+  --accent:#8B5CF6; --accent-2:#A78BFA;
+  --success:#34D399; --warning:#FBBF24; --danger:#F87171;
+  --text:#F4F4F5; --text-2:#A1A1AA;
+  --radius:16px; --radius-sm:10px;
+  --sidebar-w:264px; --nav-h:64px;
+  --font:'Inter',system-ui,sans-serif;
+  --shadow:0 8px 32px -8px rgba(0,0,0,.5);
+  --speed:.2s;
+}
+[data-theme="light"]{
+  --bg:#FAFAFA; --surface:#FFFFFF; --surface-2:#F1F1F4; --border:#E2E2E8;
+  --text:#18181B; --text-2:#6B6B76; --shadow:0 8px 32px -12px rgba(0,0,0,.15);
+}
+[data-density="compact"]{ --radius:10px; }
+html{font-size:16px}
+html[data-text="large"]{font-size:18px}
+
+/* Colores de las cinco áreas */
+.area-core{--area:#34D399}.area-rgs{--area:#8B5CF6}.area-learning{--area:#39d0ff}
+.area-home{--area:#FBBF24}.area-free{--area:#F472B6}

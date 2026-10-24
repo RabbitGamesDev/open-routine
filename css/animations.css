@@ -1,0 +1,43 @@
+/* ===== Animaciones (respetan prefers-reduced-motion) ===== */
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@keyframes pop{0%{transform:scale(.85)}60%{transform:scale(1.05)}100%{transform:scale(1)}}
+@keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+@keyframes toastIn{from{opacity:0;transform:translateY(-12px) scale(.96)}to{opacity:1;transform:none}}
+@keyframes pulseRing{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 45%,transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@keyframes shimmer{from{background-position:-400px 0}to{background-position:400px 0}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+[data-motion="off"] *,[data-motion="off"] *::before,[data-motion="off"] *::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
+
+.v-enter{animation:fadeUp .4s cubic-bezier(.2,.8,.2,1) both}
+.v-enter-2{animation:fadeUp .45s .06s cubic-bezier(.2,.8,.2,1) both}
+.v-enter-3{animation:fadeUp .5s .12s cubic-bezier(.2,.8,.2,1) both}
+.pop{animation:pop .35s cubic-bezier(.2,1.4,.4,1)}
+
+/* Splash */
+#splash{position:fixed;inset:0;z-index:200;background:var(--bg);display:grid;place-items:center;transition:opacity .5s}
+#splash.out{opacity:0;pointer-events:none}
+#splash img{width:84px;height:84px;animation:pop .7s cubic-bezier(.2,1.4,.4,1)}
+#splash p{margin-top:1rem;font-weight:800;letter-spacing:-.02em;font-size:1.2rem}
+#splash p span{background:linear-gradient(90deg,var(--accent),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+
+/* Skeleton */
+.skeleton{border-radius:12px;background:linear-gradient(90deg,var(--surface) 25%,var(--surface-2) 50%,var(--surface) 75%);background-size:800px 100%;animation:shimmer 1.3s infinite}
+
+/* Toast éxito */
+.toast-ok{pointer-events:auto;border-radius:14px;padding:.85rem 1rem;background:color-mix(in srgb,var(--success) 16%,var(--surface));
+  border:1px solid color-mix(in srgb,var(--success) 45%,transparent);color:var(--text);animation:toastIn .3s cubic-bezier(.2,.8,.2,1);display:flex;gap:.6rem;align-items:center}
+.toast-ok svg{color:var(--success)}
+
+/* Toast alarma (error) con flip 3D */
+.toast-err{pointer-events:auto;position:relative;border-radius:16px;padding:1rem 1.1rem;perspective:900px;
+  background:linear-gradient(135deg,rgba(127,29,29,.95),rgba(69,10,10,.95));
+  border:1px solid color-mix(in srgb,var(--danger) 55%,transparent);color:#fecaca;
+  box-shadow:0 16px 48px -12px rgba(239,68,68,.5);animation:toastIn .35s cubic-bezier(.2,.8,.2,1)}
+.toast-err.shake{animation:shake .45s}
+.tflip{position:relative;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.3,1.3,.4,1)}
+.toast-err.flipped .tflip{transform:rotateY(180deg)}
+.tface{backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.tback{position:absolute;inset:0;transform:rotateY(180deg);overflow:auto;font-family:ui-monospace,monospace;
+  font-size:.68rem;color:#fca5a5;white-space:pre-wrap;word-break:break-word;max-height:150px}
+.pulse-dot{width:8px;height:8px;border-radius:99px;background:var(--success);animation:pulseRing 2.2s infinite}
+.pulse-dot.off{background:var(--warning);animation:none}
