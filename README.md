@@ -110,9 +110,9 @@ open-routine/
 | :---: | :---: |
 | <img src="Assets/dash.png" alt="Dashboard Principal OpenRoutine" width="100%"> | <img src="Assets/missions.png" alt="Módulo de Misiones OpenRoutine" width="100%"> |
 
-| Módulo RGS Labs & Resultados | Configuración & Coach de Inteligencia Artificial |
+| Gráficas y resultados | Rutinas y tareas |
 | :---: | :---: |
-| <img src="Assets/rgs.png" alt="Resultados RGS Labs" width="100%"> | <img src="Assets/coach.png" alt="Coach de IA y Ajustes" width="100%"> |
+| <img src="Assets/rgs.png" alt="Resultados RGS Labs" width="100%"> | <img src="Assets/rutinas.png" alt="Coach de IA y Ajustes" width="100%"> |
 
 ---
 
