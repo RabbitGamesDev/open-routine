@@ -108,11 +108,11 @@ open-routine/
 
 | Dashboard Principal & Sugerencias | Misiones & Vista Kanban de Tareas |
 | :---: | :---: |
-| <img src="Assets/dash.png" alt="Dashboard Principal OpenRoutine" width="100%"> | <img src="Assets/missions.png" alt="Módulo de Misiones OpenRoutine" width="100%"> |
+| <img src="assets/dash.png" alt="Dashboard Principal OpenRoutine" width="100%"> | <img src="assets/missions.png" alt="Módulo de Misiones OpenRoutine" width="100%"> |
 
 | Gráficas y resultados | Rutinas y tareas |
 | :---: | :---: |
-| <img src="Assets/rgs.png" alt="Resultados RGS Labs" width="100%"> | <img src="Assets/rutinas.png" alt="Coach de IA y Ajustes" width="100%"> |
+| <img src="assets/rgs.png" alt="Resultados RGS Labs" width="100%"> | <img src="assets/rutinas.png" alt="Coach de IA y Ajustes" width="100%"> |
 
 ---
 
