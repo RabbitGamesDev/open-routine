@@ -1,5 +1,5 @@
 # Politica de privacidad — OpenRutine (borrador v1.0)
-**Responsable**: [COMPLETAR antes de publicar: nombre/apodo y correo de contacto].
+**Responsable**: [RGS Labs™- rgslabs.contact@gmail.com].
 
 1. **Datos locales**: tareas, rutinas, ocurrencias, resultados y registros academicos se guardan
    en IndexedDB de TU dispositivo. Solo tu tienes acceso.
